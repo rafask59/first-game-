@@ -1,0 +1,152 @@
+import time
+time.sleep(2)
+print("Your mission is to find the treasure.")
+time.sleep(5)
+print("This is going to be an extremely difficult challenge, where lurking monsters await to kill ya.")
+time.sleep(5)
+print("In the beginning, you are brought ashore on a deserted and forgotten island, after a storm hit your ship. Everyone is dead. You are the sole survivor.")
+time.sleep(5)
+print("To survive, you have to head into the center of the island and solve some puzzles to get food and water. Good luck soldier.")
+time.sleep(5)
+
+sex = input("Do you want to play as a boy or a girl?")
+while not (sex == "boy" or sex == "girl"):
+    sex = input('PLEASE enter boy or girl as sex, only!')
+
+if sex == "boy":
+    time.sleep(2)
+    name1 = input("Choose a name from these => Rafas,Kostas,Stelios:")
+    while not (name1.lower() == 'rafas' or name1.lower() == "kostas" or name1.lower() == "stelios"):
+       time.sleep(2)
+       name1 = input("Please choose a name from these => Rafas,Kostas,Stelios.")
+    if name1.lower() == "rafas" or name1.lower() == "stelios" or name1.lower() == "kostas":
+       time.sleep(2)
+       print(f"Welcome {name1.lower()}.")
+
+
+if sex == "girl":
+    time.sleep(2)
+    name1 = input("Choose a name from these => Vaso, Litsa, Maria:")
+    while not (name1.lower() == 'maria' or name1.lower() == "vaso" or name1.lower() == "litsa"):
+       time.sleep(2)
+       name1 = input("Please choose a name from these => Vaso, Litsa, Maria:")
+    if name1.lower() == "maria" or name1.lower() == "vaso" or name1.lower() == "litsa":
+       time.sleep(2)
+       print(f"Welcome {name1.lower()}.")
+
+
+
+#weapon choosing phase
+time.sleep(2)
+x = input("Now that you have chosen a name, choose your weapon from the list below.\nList of weapons : Sword, Axe, Spear:")
+time.sleep(2)
+while not (x.lower() == "sword" or x.lower() == "axe" or x.lower() == "spear"):
+    time.sleep(2)
+    x = input("Now that you have chosen a name, choose your weapon from the list of weapons : Sword, Axe, Spear :")
+    time.sleep(2)
+if x.lower() == "sword" or x.lower() == "axe" or x.lower() == "spear":
+   time.sleep(2)
+   print(f"The {x.lower()} is a fine choice!")
+
+time.sleep(3)
+print("Now its time for you to head into the island.")
+time.sleep(2)
+print("WOW, take care! You found a crossway!")
+
+#pathchoosing
+time.sleep(2)
+path = input("Choose either left, or right:")
+time.sleep(3)
+while not (path == "left" or path == "right"):
+    time.sleep(2)
+    path = input("Please, type ONLY left or right.")
+if path.lower() == "left":
+    time.sleep(2)
+    path2 = input("You have come across another crossway! Choose left or right again! :")
+    while not (path2.lower() == "left" or path2.lower() == "right"):
+        time.sleep(2)
+        path2 = input("Please enter left or right ONLY!")
+    if path2.lower() == "left":
+        time.sleep(2)
+        print("Congrats, you found the secret Sunshield!")
+    elif path2.lower() == "right":
+        time.sleep(2)
+        print("You were too hasty and you missed on the good stuff.")
+if path.lower() == "right":
+    time.sleep(2)
+    print("Congratulations, you found a secret spear!")
+
+
+
+#riddlephase #<<x>> will be used instead of <<userword>> to shorten the code
+time.sleep(3)
+print(f"As {name1} was running...he found a riddle to solve.\n You have to find a word that contains at least 3 of the letters listed to proceed.\nList => a,e,r,u,p,t")
+
+
+time.sleep(2)
+x = input("Please enter your word here:")
+time.sleep(2)
+x = x.lower()
+if x.count("a") +x.count("e")+ x.count("r") + x.count("u") +x.count("p") + x.count("t") >=3:
+    time.sleep(2)
+    print ("You have successfully passed the trial.")
+
+
+
+elif x.count("a") +x.count("e")+ x.count("r") + x.count("u") +x.count("p") + x.count("t") >=1 and x.count("a") +x.count("e")+ x.count("r") + x.count("u") +x.count("p") + x.count("t") <=2:
+   while x.count("a") +x.count("e")+ x.count("r") + x.count("u") +x.count("p") + x.count("t") >=1 and x.count("a") +x.count("e")+ x.count("r") + x.count("u") +x.count("p") + x.count("t") <=2:
+      time.sleep(2)
+      print("You have one more chance.")
+      time.sleep(2)
+      x = input("Please enter your word here:")
+      x = x.lower()
+      if  x.count("a") +x.count("e")+ x.count("r") + x.count("u") +x.count("p") + x.count("t") >=3:
+         time.sleep(2)
+         print("Finally, you passed the trial.")
+
+
+else:
+    time.sleep(2)
+    print("You are dead and will respawn in 5 seconds.")
+    time.sleep(2)
+    x = input("Please enter your word here:")
+    time.sleep(2)
+    x = x.lower()
+    while x.count("a") + x.count("e") + x.count("r") + x.count("u") + x.count("p") + x.count("t") <= 0:
+        time.sleep(2)
+        print("You are dead,yet again and will respawn in 5 seconds.")
+        time.sleep(2)
+        x = input("Please enter your word here:")
+        x = x.lower()
+        if x.count("a") + x.count("e") + x.count("r") + x.count("u") + x.count("p") + x.count("t") >=3:
+           time.sleep(2)
+           print("Finally you passed the trial.")
+
+
+time.sleep(3)
+
+print("Now that the trial is passed, you need to play the ultimate game...")
+time.sleep(2)
+
+time.sleep(2)
+print ("TOUROUROUROUROUROUROU")
+time.sleep(2)
+print ("TOUROUROUROUROUROUROU")
+time.sleep(2)
+print ("TOUROUROUROUROUROUROU")
+time.sleep(2)
+
+answer = input("Do you love your brother?:")
+while not (answer.lower() == "yes" or answer.lower()) == "no":
+   time.sleep(2)
+   answer = input ('JUST SAY YES OR NO!')
+if answer.lower() == "yes":
+   time.sleep(2)
+   print("Raf loves you too!")
+elif answer.lower() == "no":
+   time.sleep(2)
+   print("It is okey,Raf loves you either way")
+   time.sleep(2)
+   print("END OF STORY.")
+   time.sleep(2)
+   print("Thank you for playing.")
