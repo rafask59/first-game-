@@ -1,0 +1,75 @@
+print('''Welcome to the advanced calculator! 
+Here, you can do maths easily!
+First you have to enter the numbers you want to include 
+in the calculations. Keep typing numbers, and when you are done, 
+type <<end>> wherever you like.''')
+
+print("\n")
+
+print('''Following the instructions, add numbers and to perform each calculation,)
+you have to type + to add, - for minus, / to divide, sqrt for square root,
+// to perfectly divide, ** for power, % to find the remaining amount after a 
+calculation.Remember, the starting number is always 0! Have fun!''')
+
+
+
+
+print("\n")
+import math
+
+list_symbols =["+","*","-","/","//","%","sqrt"]
+
+n = 1
+sum = 0
+while True :
+    number = input(f"Give us number{n} :")
+    if number.lower() == "end" : #helping the user exit the program easier.
+        break
+    else :
+       for i in list_symbols :
+           if i in number :
+               while i in number :
+                  number = input(f"Give us number{n} correctly this time, without typos:") #preventing user errors.
+
+       number = float(number)
+
+
+    print('\n')
+
+    symbol = input("Enter the calculation you want to perform :")
+
+    print('\n')
+
+    while symbol != "+" and symbol != "-" and symbol != "*" and symbol != "/" and symbol != "//" and symbol != "sqrt" :
+       print('\n')
+       symbol = input("Enter the calculation you want to perform again \nonly using + or - or * or / or // or sqrt or % :")
+
+
+
+    if symbol.lower() == "end" :
+        break
+    if symbol == "+" :
+        sum += number
+    elif symbol == "-" :
+        sum -= number
+    elif symbol == "*" :
+        sum *= number
+    elif symbol == "/" :
+        sum /= number
+    elif symbol == "//" :
+        sum //= number
+    elif symbol == "%" :
+        sum %= number
+    elif symbol == "sqrt" :
+        sum += number
+        sum = math.sqrt(sum)
+    else :
+        print("You did something wrong, please restart the whole program.")
+
+    print('\n')
+    n += 1
+    print("The result is",sum)
+
+print('\n')
+print("End of program")
+print("Thanks for using our advanced calculator!")
