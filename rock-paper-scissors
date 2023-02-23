@@ -1,0 +1,99 @@
+rock = "rock"
+paper = "paper"
+scissors = "scissors"
+import random
+import time
+
+list_of_choices = [rock,paper,scissors]        #]
+x = random.randint(0,2)                        #] Choosing a random for the PC.
+final_pc_choice = list_of_choices[x]           #]
+user_choice = input("What is your choice? Choose between rock, paper, or scissors. :")
+
+
+#This part tries to make the "game" fun, and predict user mistakes.
+
+while not (user_choice == "rock" or user_choice == "paper" or user_choice == "scissors"):
+    time.sleep(1)
+    print("Please, avoid any spaces/symbols, and type only paper,scissors or rock.")
+    time.sleep(0.5)
+    user_choice = input("Enter your new choice here. =>")
+    while not (user_choice == "rock" or user_choice == "paper" or user_choice == "scissors"):
+        time.sleep(1)
+        user_choice = input("Last chance to enter it correctly. =>")
+        while not (user_choice == "rock" or user_choice == "paper" or user_choice == "scissors"):
+            user_choice = list_of_choices[x]
+            time.sleep(0.5)
+            print("Sorry, we had to choose for you!")
+#Now, to the result part.
+
+if (final_pc_choice == "rock" and user_choice == "scissors"):
+   time.sleep(1)
+   print(f"User's choice is {user_choice} and PC's choice is {final_pc_choice}, so the user LOSES.")
+
+elif (final_pc_choice == "scissors" and user_choice == "paper"):
+   time.sleep(1)
+   print(f"User's choice is {user_choice} and PC's choice is {final_pc_choice}, so the user LOSES.")
+
+elif (final_pc_choice == "paper" and user_choice == "rock"):
+   time.sleep(1)
+   print(f"User's choice is {user_choice} and PC's choice is {final_pc_choice}, so the user LOSES.")
+
+elif final_pc_choice == user_choice:
+    result = "draw" #a variable to use in a loop.
+    time.sleep(1)
+    print(f"User's choice is {user_choice} and PC's choice is {final_pc_choice},so it is a DRAW.")
+
+    if result == "draw":
+       user_choice = input("It was a draw, so you get a rematch. Enter rock, paper, or scissors here. =>")
+       while not (user_choice == "rock" or user_choice == "paper" or user_choice == "scissors"):
+          time.sleep(1)
+          print("Please, avoid any spaces/symbols, and type only paper,scissors or rock.")
+          time.sleep(2)
+          user_choice = input("Enter your new choice here. =>")
+          while not (user_choice == "rock" or user_choice == "paper" or user_choice == "scissors"):
+             time.sleep(1)
+             user_choice = input("Last chance to enter it correctly. =>")
+             while not (user_choice == "rock" or user_choice == "paper" or user_choice == "scissors"):
+                user_choice = list_of_choices[x]
+                time.sleep(0.5)
+                print("Sorry, we had to choose for you!")
+
+    if (final_pc_choice == "rock" and user_choice == "scissors"):
+       time.sleep(1)
+       print(f"User's choice is {user_choice} and PC's choice is {final_pc_choice}, so the user LOSES.")
+
+    elif (final_pc_choice == "scissors" and user_choice == "paper"):
+       time.sleep(1)
+       print(f"User's choice is {user_choice} and PC's choice is {final_pc_choice}, so the user LOSES.")
+
+    elif (final_pc_choice == "paper" and user_choice == "rock"):
+       time.sleep(1)
+       print(f"User's choice is {user_choice} and PC's choice is {final_pc_choice}, so the user LOSES.")
+
+    elif not final_pc_choice != user_choice:
+       result = "draw"  # a variable to use in a loop.
+       time.sleep(1)
+       print(f"User's choice is {user_choice} and PC's choice is {final_pc_choice},so it is a DRAW.")
+       time.sleep(0.5)
+       print("This time you will not get a rematch, you have to restart the game!")
+
+    else:
+       time.sleep(0.5)
+       print(f"User's choice is {user_choice} and PC's choice is {final_pc_choice}, so the user WINS.")
+       time.sleep(1)
+       print("THANKS FOR PLAYING <3")
+       time.sleep(1)
+       print("THE END.")
+
+
+       # Now, to the result part yet again.
+
+
+
+else:
+    time.sleep(0.5)
+    print(f"User's choice is {user_choice} and PC's choice is {final_pc_choice}, so the user WINS.")
+time.sleep(1)
+print("THANKS FOR PLAYING <3")
+time.sleep(1)
+print("THE END.")
