@@ -1,0 +1,137 @@
+import random
+import time
+
+print("Hello!")
+time.sleep(1)
+print("Welcome to Python Bank!")
+time.sleep(1)
+first_time = input("Is this your first time here ? Type yes or no :")
+
+list_num = ["1", "2", "3", "4", "5", "6", "7", "8", "9"] #helping in pin generation
+n = 0 #look below.
+#making sure user enters only 4 digits, and no symbols,letters etc.
+
+while first_time.lower() != "yes" and first_time.lower() != "no" :
+   time.sleep(1)
+   print('\n')
+   first_time = input("Please reply with just a yes or no, no gaps.")
+
+
+if first_time.lower() == "yes" :
+    pin = ""
+    for i in range (4) :
+        i = random.choice(list_num)
+        pin += i
+    print("We shall now generate a pin for you.")
+    time.sleep(1)
+    print ("Your new pin is :",pin)
+
+elif first_time.lower() == "no" :
+    print('\n')
+    time.sleep(1)
+    print("Hello, to enter our virtual environment!")
+    print('\n')
+    time.sleep(1)
+    pin = input("Enter your PIN here :")
+    print('\n')
+    time.sleep(1)
+    pin_check = input("Please re-enter your pin here for safety reasons :")
+
+    if pin_check == pin :
+       print('\n')
+       time.sleep(1)
+       print("Access granted!")
+       print('\n')
+
+    else : # checking if his pin is legit.
+       while pin_check != pin :
+           time.sleep(1)
+           pin_check = input("Enter your pin again please :")
+           print('\n')
+           time.sleep(1)
+           pin = input("Enter your PIN to complete authorisation :")
+           print('\n')
+       time.sleep(1)
+       print("Access granted!")
+       print('\n')
+balance = 0
+
+while True :
+   time.sleep(2)
+   print(f"""These are our services, you can choose which one you want.
+   
+   Your current balance is {balance}.
+   
+   1. Deposit
+   2. Withdrawal
+   3. Pin change
+   4. Show balance.
+   5. Exit. 
+   """)
+
+   print('\n')
+   customer_choice = int(input("Choose which service you want :"))
+   print('\n')
+
+   while customer_choice != 1 and customer_choice != 2 and customer_choice != 3 and customer_choice != 4 and customer_choice != 5 :
+      time.sleep(1)
+      customer_choice = int(input("Please choose again, strictly between 1 and 5."))
+
+   if customer_choice == 1 :
+      print('\n')
+      time.sleep(1)
+      deposit_amount = float(input("Type the exact amount you want to deposit :"))
+      balance += deposit_amount
+      time.sleep(1)
+      print('\n')
+      print(f'Your new balance is {balance} euros.')
+
+   elif customer_choice == 2 :
+      time.sleep(1)
+      print('\n')
+      withdrawal_amount = float(input("Type the exact amount you want to withdraw :"))
+      time.sleep(1)
+      print('\n')
+      while withdrawal_amount > balance : #case when user wants more money than he has.
+         withdrawal_amount = float(input(f"Error : You do not have this much money Type the exact amount you want to withdraw, but it has to be less than {balance} :"))
+      balance -= withdrawal_amount
+      time.sleep(1)
+      print(f"Your new balance is {balance}.")
+
+   elif customer_choice == 3 :
+      time.sleep(1)
+      print(f"Your old PIN is {pin},\nTime for a new one.")
+      print('\n')
+      time.sleep(1)
+      pin2 = input("Enter your new desired PIN here :")
+      print('\n')
+      time.sleep(1)
+      pin3 = input("Please confirm your new PIN.")
+      print('\n')
+      while not pin2 == pin3 :
+         time.sleep(1)
+         print("You mispelled your new PIN.")
+         print('\n')
+         time.sleep(1)
+         pin2 = input("Please re-entered your new PIN : ")
+         print('\n')
+         time.sleep(1)
+         pin3 = input("Please re-confirm your new PIN :")
+      time.sleep(1)
+      print(f"Your new PIN is {pin2}.")
+
+   elif customer_choice == 4 :
+      time.sleep(1)
+      print('\n')
+      print(f"Your balance is {balance}.")
+
+   else :
+       time.sleep(1)
+       print('\n')
+       print("Thanks for trusting our bank.")
+       break
+
+
+time.sleep(1)
+print('\n')
+print("End of program.\nDo not forget your card!")
