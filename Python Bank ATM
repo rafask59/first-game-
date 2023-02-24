@@ -11,6 +11,7 @@ list_num = ["1", "2", "3", "4", "5", "6", "7", "8", "9"] #helping in pin generat
 n = 0 #look below.
 #making sure user enters only 4 digits, and no symbols,letters etc.
 
+       
 while first_time.lower() != "yes" and first_time.lower() != "no" :
    time.sleep(1)
    print('\n')
@@ -33,6 +34,8 @@ elif first_time.lower() == "no" :
     print('\n')
     time.sleep(1)
     pin = input("Enter your PIN here :")
+    while len(pin) != 4 :
+       pin = input("Please, re-enter the PIN using only 4 digits!")
     print('\n')
     time.sleep(1)
     pin_check = input("Please re-enter your pin here for safety reasons :")
